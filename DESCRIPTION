@@ -1,0 +1,46 @@
+Package: SEAA
+Title: Splicing Efficiency Analysis and Annotation
+Version: 0.9.1
+Authors@R: 
+    c(
+    person(given = "Zixiang",
+           family = "Wang",
+           role = c("aut", "cre"),
+           email = "wangzixiang@mail.sdu.edu.cn",
+           comment = c(ORCID = "0000-0001-5252-9764")),
+    person(given = "Zhaojian",
+           family = "Liu",
+           role = c("aut"),
+           email = "liujian9782@mail.edu.cn")
+    )
+Description: This package provides convenient and rapid splicing efficiency
+    calculation and splicing sites annotation function using next generation 
+    sequencing data. Aligned .bam files and a processed splicing sites .saf file
+    are needed. The task can be finished in several minutes using multicores with
+    the assitance of 'Rsubread'. Plots of splicing status type and Cumulative 
+    Distribution Function (CDF) and annotated vaild splicing efficiency can be 
+    exported. 
+URL: https://github.com/PrinceWang2018/SEAA
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+biocViews:
+Imports: 
+    clusterProfiler,
+    ggforce,
+    ggplot2,
+    ggpubr,
+    ggrepel,
+    grDevices,
+    gridExtra,
+    org.Hs.eg.db,
+    reshape2,
+    Rsubread,
+    stats,
+    tidyr,
+    utils
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
