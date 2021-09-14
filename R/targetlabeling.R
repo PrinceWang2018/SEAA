@@ -10,10 +10,9 @@
 #' @export
 #'
 #' @examples
-#' \donttest{
-#' target_infor<-targetlabeling(SEresultlist,target_site = "48753008",
-#' target_label = "CARD8",xlim.max = 100, ylim.max = 100)
-#' }
+#' targetlabeling(SEresultlist,target_site = "27830321",target_label = "RPL21",
+#' xlim.max = 1000, ylim.max = 1000)
+
 targetlabeling<-function(SEresultlist,target_site = "48753008",target_label = "CARD8", xlim.max = 100, ylim.max = 100){
   efficiency_5ss_3ss<-SEresultlist[["efficiency_5ss_3ss"]]
   sample_list_show<-SEresultlist[["sample_list_show"]]
@@ -38,6 +37,11 @@ targetlabeling<-function(SEresultlist,target_site = "48753008",target_label = "C
   ylab(ylab_text)+
   theme(plot.title = element_text(hjust = 0.5))
 
-  ggplot2::ggsave("Labeling the target gene of splicing site.pdf",device = "pdf",width = 3.2, height = 3.2)
-  return(df2)
+  if (df2[,7]>xlim.max) {
+    message("Warning: xlim.max was too low and target site was out of range.")
+  }
+  if (df2[,8]>ylim.max) {
+    message("Warning: ylim.max was too low and target site was out of range.")
+  }
+  return(label_plot)
 }

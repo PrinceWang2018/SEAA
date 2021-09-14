@@ -8,9 +8,7 @@
 #' @export
 #'
 #' @examples
-#' \donttest{
 #' CDFplot(SEresultlist,efficiency_5ss_3ss_nona_inf_reduct,zoom.x= c(5,6))
-#' }
 #'
 CDFplot<-function(SEresultlist,efficiency_5ss_3ss_nona_inf_reduct,zoom.x= c(5,6)){
   sample_list<-SEresultlist[["sample_list"]]
@@ -105,9 +103,9 @@ CDFplot<-function(SEresultlist,efficiency_5ss_3ss_nona_inf_reduct,zoom.x= c(5,6)
     ggforce::facet_zoom(xlim = zoom.x, zoom.size = 1)
 
   message("[Step4] Merge and export Cumulative Distribution Function plot.")
-  grDevices::pdf("./Cumulative Distribution Function Plot.pdf", width = 10, height = 7.5)
+  #grDevices::pdf("./Cumulative Distribution Function Plot.pdf", width = 10, height = 7.5)
   gridExtra::grid.arrange(cdf_p,cdf_p_5ss,cdf_p_3ss,ncol=3)
-  grDevices::dev.off()
+  #grDevices::dev.off()
   message("Cumulative Distribution Function plot was successfully exported into the environment root path! ")
 
   KStestlist<-list(KSTEST_result,KSTEST_result_5ss,KSTEST_result_3ss)

@@ -18,8 +18,6 @@ a large list
 Splicing Status Type Plotting
 }
 \examples{
-\donttest{
 SEtyperesult<-SEtypeplot(SEresultlist,"horizontal")
-}
 
 }

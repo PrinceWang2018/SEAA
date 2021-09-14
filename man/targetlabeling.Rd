@@ -30,8 +30,6 @@ a data frame of the target information
 Labeling the Target Gene in the Splicing Efficiency List
 }
 \examples{
-\donttest{
-target_infor<-targetlabeling(SEresultlist,target_site = "48753008",
-target_label = "CARD8",xlim.max = 100, ylim.max = 100)
-}
+targetlabeling(SEresultlist,target_site = "27830321",target_label = "RPL21",
+xlim.max = 1000, ylim.max = 1000)
 }

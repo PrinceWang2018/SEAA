@@ -63,7 +63,7 @@ target_infor<-targetlabeling(SEresultlist,target_site = "48753008",target_label 
 ```
 Step6: Annotation of Splicing Sites Acquiring filtered Splicing Efficiency.
 ``` r
-SEannotaionresult<-SEsiteanno(efficiency_5ss_3ss_nona_inf_reduct)
+SEannotaionresult<-SEsiteanno(SEresultlist, efficiency_5ss_3ss_nona_inf_reduct)
 ```
 
 ## Citation

@@ -4,10 +4,14 @@
 \alias{SEsiteanno}
 \title{Annotation of Splicing Sites Acquiring Filtered Splicing Efficiency}
 \usage{
-SEsiteanno(efficiency_5ss_3ss_nona_inf_reduct)
+SEsiteanno(SEresultlist, efficiency_5ss_3ss_nona_inf_reduct, species = "hs")
 }
 \arguments{
+\item{SEresultlist}{a large list created by SEcalculation}
+
 \item{efficiency_5ss_3ss_nona_inf_reduct}{a data frame created by SEfilter}
+
+\item{species}{species for the data to be annotated: hs or mm}
 }
 \value{
 a data frame
@@ -17,6 +21,6 @@ This function helps to annotate the splicing sites with clusterProfiler. The gen
 }
 \examples{
 \donttest{
-SEannotaionresult<-SEsiteanno(efficiency_5ss_3ss_nona_inf_reduct)
+SEannotaionresult<-SEsiteanno(SEresultlist, efficiency_5ss_3ss_nona_inf_reduct)
 }
 }

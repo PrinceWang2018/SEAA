@@ -18,7 +18,6 @@ a dataframe
 Unconventional splicing efficiency will be removed and reads counts less than min_counts will be filtered.
 }
 \examples{
-\donttest{
 efficiency_5ss_3ss_nona_inf_reduct<-SEfilter(SEresultlist,min_counts = 5)
-}
+
 }

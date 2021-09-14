@@ -11,9 +11,10 @@
 #'
 #' @examples
 #' \donttest{
-#' BAM_files <- c("./NC_1.bam","./shUSP39_1.bam")
-#' Anno_SAF<- "/home/wzx/project3tB/SEAA_project/reference/hg19/hg19_NCBI_splicing_sites_20210705.saf"
-#' SEresultlist<-SEcalculation(BAM_files,Anno_SAF,paired = TRUE ,thread = 8,strand = 1)
+#' BAM_files <- c("~/project3tB/SEAA_project/R_counstruction_place/SEAA/inst/extdata/NC_t.bam",
+#' "~/project3tB/SEAA_project/R_counstruction_place/SEAA/inst/extdata/USP_t.bam")
+#' Anno_SAF<-"~/project3tB/SEAA_project/R_counstruction_place/SEAA/inst/extdata/test.saf"
+#' SEresultlist<-SEcalculation(BAM_files,Anno_SAF,paired = TRUE ,thread = 2,strand = 1)
 #' }
 #'
 SEcalculation <-function(BAM_files,Anno_SAF,paired = TRUE ,thread = 1,strand = 1){
@@ -40,9 +41,10 @@ SEcalculation <-function(BAM_files,Anno_SAF,paired = TRUE ,thread = 1,strand = 1
   fc_count_spliced<- fc_count_total[, sample_list] - fc_count_unspliced[, sample_list]
   message("[Step4] Calculating splicing efficiency and exporting.")
   efficiency_5ss_3ss <- cbind(fc_anno, fc_count_spliced[, sample_list] / fc_count_unspliced[, sample_list])
-  utils::write.table(efficiency_5ss_3ss,file = "./splicing_efficiency_5ss_3ss_fc_raw.txt", sep = "\t", row.names = FALSE)
+  #utils::write.table(efficiency_5ss_3ss,file = "./splicing_efficiency_5ss_3ss_fc_raw.txt", sep = "\t", row.names = FALSE)
   SEresultlist<-list(efficiency_5ss_3ss,fc_count_spliced,fc_count_total,fc_count_unspliced,fc_anno,sample_list,sample_list_show)
   names(SEresultlist)<-c("efficiency_5ss_3ss","fc_count_spliced","fc_count_total","fc_count_unspliced","fc_anno","sample_list","sample_list_show")
   return(SEresultlist)
 }
+
 

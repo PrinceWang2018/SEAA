@@ -25,9 +25,10 @@ This function is used to calculate the splicing efficiency.
 }
 \examples{
 \donttest{
-BAM_files <- c("./NC_1.bam","./shUSP39_1.bam")
-Anno_SAF<- "/home/wzx/project3tB/SEAA_project/reference/hg19/hg19_NCBI_splicing_sites_20210705.saf"
-SEresultlist<-SEcalculation(BAM_files,Anno_SAF,paired = TRUE ,thread = 8,strand = 1)
+BAM_files <- c("~/project3tB/SEAA_project/R_counstruction_place/SEAA/inst/extdata/NC_t.bam",
+"~/project3tB/SEAA_project/R_counstruction_place/SEAA/inst/extdata/USP_t.bam")
+Anno_SAF<-"~/project3tB/SEAA_project/R_counstruction_place/SEAA/inst/extdata/test.saf"
+SEresultlist<-SEcalculation(BAM_files,Anno_SAF,paired = TRUE ,thread = 2,strand = 1)
 }
 
 }

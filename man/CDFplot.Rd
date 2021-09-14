@@ -20,8 +20,6 @@ a large list with K-S test result
 Plot the Cumulative Distribution Function of splicing efficiency.
 }
 \examples{
-\donttest{
 CDFplot(SEresultlist,efficiency_5ss_3ss_nona_inf_reduct,zoom.x= c(5,6))
-}
 
 }

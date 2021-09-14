@@ -6,9 +6,7 @@
 #' @export
 #'
 #' @examples
-#' \donttest{
 #' SEtyperesult<-SEtypeplot(SEresultlist,"horizontal")
-#' }
 #'
 SEtypeplot<-function(SEresultlist,arrangement){
   efficiency_5ss_3ss<-SEresultlist[["efficiency_5ss_3ss"]]
@@ -78,7 +76,7 @@ SEtypeplot<-function(SEresultlist,arrangement){
     theme(legend.position = "right", plot.title = element_text(hjust = 0.5))
 
   message("[Step4] Merge and export the plot.")
-  grDevices::pdf("./Splicing Status of the Splicing Sites.pdf", width = 12, height = 3)
+  #grDevices::pdf("./Splicing Status of the Splicing Sites.pdf", width = 12, height = 3)
   if (arrangement=="horizontal") {
     gridExtra::grid.arrange(p_all,p_5ss,p_3ss,ncol=3)
   } else if (arrangement=="vertical") {
@@ -86,8 +84,8 @@ SEtypeplot<-function(SEresultlist,arrangement){
   } else{
     message("Error: Wrong arrangement parameter was imported!")
   }
-  grDevices::dev.off()
-  message("Splicing status type plot was successfully exported into the environment root path! ")
+  #grDevices::dev.off()
+  message("Splicing status type plot was successfully exported. ")
   SEtyperesult<-list(se_type,se_type_5ss,se_type_3ss)
   names(SEtyperesult)<-c("se_type","se_type_5ss","se_type_3ss")
   return(SEtyperesult)

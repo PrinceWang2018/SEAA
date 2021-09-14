@@ -7,9 +7,8 @@
 #' @export
 #'
 #' @examples
-#' \donttest{
 #' efficiency_5ss_3ss_nona_inf_reduct<-SEfilter(SEresultlist,min_counts = 5)
-#' }
+#'
   SEfilter<-function(SEresultlist,min_counts = 5){
     efficiency_5ss_3ss<-SEresultlist[["efficiency_5ss_3ss"]]
     fc_count_spliced<-SEresultlist[["fc_count_spliced"]]
