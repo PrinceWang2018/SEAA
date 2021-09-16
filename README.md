@@ -4,13 +4,12 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-SEAA provides convenient and rapid splicing efficiency
-    calculation and splicing sites annotation function using next generation 
-    sequencing data. Aligned .bam files and a processed splicing sites .saf file
-    are needed. The task can be finished in several minutes using multicores with
-    the assitance of 'Rsubread'. Plots of splicing status type and Cumulative 
-    Distribution Function (CDF) and annotated vaild splicing efficiency can be 
-    exported. 
+SEAA provides convenient and rapid splicing efficiency calculation and splicing 
+sites annotation function using next generation sequencing data. Aligned .bam 
+files and a processed splicing sites .saf file are needed. The task can be finished 
+in several minutes  multi-core computing with the assitance of 'Rsubread'. Plots 
+of splicing status type and Cumulative Distribution Function (CDF) and annotated 
+vaild splicing efficiency can be exported. 
 
 ## Installation
 
@@ -26,8 +25,20 @@ You can also install the released version of SEAA from [CRAN](https://CRAN.R-pro
 ``` r
 install.packages("SEAA")
 ```
-in the near furture.
 
+## Data preparation
+
+Aligning your sequencing files with hisat2 is strongly recommended. Genome_trans
+index of hisat2 can be downloaded from http://daehwankimlab.github.io/hisat2/download/.
+It should be noticed that ensembl version reference files with chromosome number 
+"1" instead of "chr1" were used. Or you will need to edit the saf file manually.
+
+``` r
+hisat2 -x /indexpath/hisat2/grch37_tran/genome_tran -1 /fastqpath/NC_1.fastq -2 /fastqpath/NC_2.fastq --min-intronlen 20 --max-intronlen 10000 --threads 12 --rna-strandness F | samtools sort -o /outputpath/NC.bam - 
+```
+We have already prepared the saf files consisting the splicing sites of human (hg19)
+and mouse (mm10) which can be downloaded from our github repository https://github.com/PrinceWang2018/SEAA_reference.
+ 
 ## Example
 
 This is a basic workflow which shows you how to use this software:
@@ -35,7 +46,7 @@ This is a basic workflow which shows you how to use this software:
 ``` r
 library("SEAA")
 #set you work path
-setwd("/home/wzx/project3tB/SEAA_project/pkg_test/")
+setwd("/home/username/workpath/")
 ```
 Step1: Caculating splicing efficiency.
 ``` r
@@ -57,16 +68,16 @@ Step4: Cumulative Distribution Function plotting based on filtered splicing effi
 ``` r
 CDFplot(SEresultlist,efficiency_5ss_3ss_nona_inf_reduct,zoom.x= c(5,6))
 ```
-Step5: labeling the target gene in filtered splicing efficiency list.
+Step5: Annotation of Splicing Sites Acquiring filtered Splicing Efficiency.
 ``` r
-target_infor<-targetlabeling(SEresultlist,target_site = "48753008",target_label = "CARD8",xlim.max = 100, ylim.max = 100)
+SEannotaionresult<-SEsiteanno(SEresultlist, efficiency_5ss_3ss_nona_inf_reduct, species = "hs")
 ```
-Step6: Annotation of Splicing Sites Acquiring filtered Splicing Efficiency.
+Step6: Labeling the target gene in filtered splicing efficiency list.
 ``` r
-SEannotaionresult<-SEsiteanno(SEresultlist, efficiency_5ss_3ss_nona_inf_reduct)
+targetlabeling(SEresultlist,target_site = "27830321",target_label = "RPL21",xlim.max = 1000, ylim.max = 1000)
 ```
 
 ## Citation
-
+Wang et al., (2021). SEAA: Splicing Efficiency Analysis and Annotation (to be published)
 ## Contact
-If you have any question, please contact Zixiang Wang at wangzixiang@mail.sdu.edu.cn .
+If you have any question, please contact Zixiang Wang at wangzixiang@mail.sdu.edu.cn or wangzixiang@live.com.

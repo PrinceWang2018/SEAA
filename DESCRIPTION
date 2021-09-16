@@ -1,6 +1,6 @@
 Package: SEAA
 Title: Splicing Efficiency Analysis and Annotation
-Version: 0.9.3
+Version: 0.9.5
 Authors@R: 
     c(
     person(given = "Zixiang",
@@ -17,9 +17,9 @@ Description: The aim of 'SEAA' is to provides convenient and rapid splicing
     efficiency calculation and splicing sites annotation function using next 
     generation sequencing data. Aligned files and a processed splicing sites 
     annotation file are needed. The task can be finished in several minutes 
-    using multithreading with the assistance of 'Rsubread'. Plots of splicing 
-    status type and Cumulative Distribution Function (CDF) and annotated valid
-    splicing efficiency can be exported. 
+    using multi-core computing with the assistance of 'Rsubread'. Plots of 
+    splicing status type and Cumulative Distribution Function (CDF) and 
+    annotated valid splicing efficiency can be exported. 
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
