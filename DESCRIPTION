@@ -1,6 +1,6 @@
 Package: SEAA
 Title: Splicing Efficiency Analysis and Annotation
-Version: 0.9.5
+Version: 0.9.6
 Authors@R: 
     c(
     person(given = "Zixiang",
@@ -13,7 +13,7 @@ Authors@R:
            role = c("aut"),
            email = "liujian9782@mail.edu.cn")
     )
-Description: The aim of 'SEAA' is to provides convenient and rapid splicing 
+Description: The aim of 'SEAA' is to provide convenient and rapid splicing 
     efficiency calculation and splicing sites annotation function using next 
     generation sequencing data. Aligned files and a processed splicing sites 
     annotation file are needed. The task can be finished in several minutes 
