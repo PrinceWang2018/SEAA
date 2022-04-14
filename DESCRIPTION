@@ -1,6 +1,6 @@
 Package: SEAA
 Title: Splicing Efficiency Analysis and Annotation
-Version: 0.9.6
+Version: 0.9.7
 Authors@R: 
     c(
     person(given = "Zixiang",

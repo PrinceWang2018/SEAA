@@ -66,7 +66,7 @@ SEsiteanno<-function(SEresultlist, efficiency_5ss_3ss_nona_inf_reduct, species =
   new_cols3<-c(colnames(efficiency_5ss_con_anno_genes9)[1:10],colnames(efficiency_5ss_con_anno_genes9)[15:18],colnames(efficiency_5ss_con_anno_genes9)[11:14])
   efficiency_5ss_con_anno_genes9<-efficiency_5ss_con_anno_genes9[,new_cols3]
   message("[Step5] Exporting the final dataframe.")
-  #utils::write.table(efficiency_5ss_con_anno_genes9,file = "./Processed_Splicing_efficiency_annotation.txt",sep = "\t",row.names = FALSE)
+  utils::write.table(efficiency_5ss_con_anno_genes9,file = "./Processed_Splicing_efficiency_annotation.txt",sep = "\t",row.names = FALSE)
   return(efficiency_5ss_con_anno_genes9)
 }
 
