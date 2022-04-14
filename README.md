@@ -20,11 +20,6 @@ install.packages("devtools")
 library(devtools)
 install_github("PrinceWang2018/SEAA")
 ```
-You can also install the released version of SEAA from [CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("SEAA")
-```
 
 ## Data preparation
 
