@@ -42,7 +42,7 @@ library("SEAA")
 #set you work path
 setwd("/home/username/workpath/")
 ```
-**Step 1 Calculating splicing efficiency. **
+**Step 1 Calculating splicing efficiency.**
 
 ``` r
 #Please locate your aligned bam files.
