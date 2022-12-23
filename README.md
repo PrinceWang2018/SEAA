@@ -20,7 +20,6 @@ install.packages("devtools")
 library(devtools)
 install_github("PrinceWang2018/SEAA")
 ```
-
 ## Data preparation
 
 Aligning your sequencing files with hisat2 is strongly recommended. Genome_trans
@@ -33,7 +32,7 @@ hisat2 -x /indexpath/hisat2/grch37_tran/genome_tran -1 /fastqpath/NC_1.fastq -2 
 ```
 We have already prepared the saf files consisting the splicing sites of human (hg19)
 and mouse (mm10) which can be downloaded from our github repository https://github.com/PrinceWang2018/SEAA_reference.
- 
+
 ## Example
 
 This is a basic workflow which shows you how to use this software:
@@ -43,31 +42,31 @@ library("SEAA")
 #set you work path
 setwd("/home/username/workpath/")
 ```
-Step1: Caculating splicing efficiency.
+Step 1 Calculating splicing efficiency.
 ``` r
 #Please locate your aligned bam files.
 BAM_files <- c("./NC_1.bam","./shUSP39_1.bam")
 #Please locate your .saf annotation files.
-Anno_SAF<- "/home/wzx/project3tB/SEAA_project/reference/hg19/hg19_NCBI_splicing_sites_20210705.saf"
-SEresultlist<-SEcalculation(BAM_files,Anno_SAF,paired = TRUE ,thread = 8,strand = 1)
+Anno_SAF <- "/home/wzx/project3tB/SEAA_project/reference/hg19/hg19_NCBI_splicing_sites_20210705.saf"
+SEresultlist <- SEcalculation(BAM_files,Anno_SAF,paired = TRUE ,thread = 8,strand = 1)
 ```
-Step2: Caculating splicing efficiency with featureCounts.
+Step 2: Splicing efficiency status classification and visualization.
 ``` r
 SEtyperesult<-SEtypeplot(SEresultlist,"horizontal")
 ```
-Step3: Filtering invaild splicing efficiency and reads counts less than min_counts.
+Step 3: Filtering invaild splicing efficiency and reads counts less than min_counts.
 ``` r
 efficiency_5ss_3ss_nona_inf_reduct<-SEfilter(SEresultlist,min_counts = 5)
 ```
-Step4: Cumulative Distribution Function plotting based on filtered splicing efficiency.
+Step 4: Cumulative Distribution Function plotting based on filtered splicing efficiency.
 ``` r
 CDFplot(SEresultlist,efficiency_5ss_3ss_nona_inf_reduct,zoom.x= c(5,6))
 ```
-Step5: Annotation of Splicing Sites Acquiring filtered Splicing Efficiency.
+Step 5: Annotation of Splicing Sites Acquiring filtered Splicing Efficiency.
 ``` r
 SEannotaionresult<-SEsiteanno(SEresultlist, efficiency_5ss_3ss_nona_inf_reduct, species = "hs")
 ```
-Step6: Labeling the target gene in filtered splicing efficiency list.
+Step 6: Labeling the target gene in filtered splicing efficiency list.
 ``` r
 targetlabeling(SEresultlist,target_site = "27830321",target_label = "RPL21",xlim.max = 1000, ylim.max = 1000)
 ```
