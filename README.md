@@ -1,5 +1,5 @@
 
-# SEAA(Splicing Efficiency Analysis and Annotation)
+# SEAA (Splicing Efficiency Analysis and Annotation)
 
 <!-- badges: start -->
 <!-- badges: end -->
