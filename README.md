@@ -84,6 +84,13 @@ targetlabeling(SEresultlist,target_site = "27830321",target_label = "RPL21",xlim
 ```
 
 ## Citation
-Wang et al., (2021). SEAA: Splicing Efficiency Analysis and Annotation (to be published)
+If you think this software interesting and use it in your research, you are welcome to use the text and paper below to cite our program:
+
+> Splicing efficiency analysis in this research was conducted with an R package Splicing Efficiency Analysis and Annotation (SEAA) (https://github.com/PrinceWang2018/SEAA) [1].
+>
+> [1] Qin, J., Huang, T., Wang, Z. *et al.* Bud31-mediated alternative splicing is required for spermatogonial stem cell self-renewal and differentiation. *Cell Death Differ* (2022). https://doi.org/10.1038/s41418-022-01057-1
+
+
+
 ## Contact
 If you have any question, please contact Zixiang Wang at wangzixiang@sdu.edu.cn or wangzixiang@live.com.
