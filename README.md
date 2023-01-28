@@ -5,12 +5,27 @@
 [![DOI](https://zenodo.org/badge/384065256.svg)](https://zenodo.org/badge/latestdoi/384065256)
 <!-- badges: end -->
 
+![Figure1](https://user-images.githubusercontent.com/37299182/215255012-36c26713-1c53-4f9c-b4d0-f36fd21b9a35.png)
+
+
 SEAA provides convenient and rapid splicing efficiency calculation and splicing 
 sites annotation function using next generation sequencing data. Aligned .bam 
 files and a processed splicing sites .saf file are needed. The task can be finished 
 in several minutes  multi-core computing with the assistance of 'Rsubread'. Plots 
 of splicing status type and Cumulative Distribution Function (CDF) and annotated 
 vaild splicing efficiency can be exported. 
+
+## Citation
+If you think this software interesting and use it in your research, you are welcome to use the text and paper below to cite our program:
+
+> Splicing efficiency analysis in this research was conducted with an R package Splicing Efficiency Analysis and Annotation (SEAA) (https://github.com/PrinceWang2018/SEAA) [1].
+>
+> [1] Qin, J., Huang, T., Wang, Z. *et al.* Bud31-mediated alternative splicing is required for spermatogonial stem cell self-renewal and differentiation. *Cell Death Differ* (2022). https://doi.org/10.1038/s41418-022-01057-1
+
+
+## Contact
+If you have any question, please contact Zixiang Wang at wangzixiang@sdu.edu.cn or wangzixiang@live.com.
+
 
 ## Installation
 
@@ -84,14 +99,4 @@ SEannotaionresult<-SEsiteanno(SEresultlist, efficiency_5ss_3ss_nona_inf_reduct, 
 targetlabeling(SEresultlist,target_site = "27830321",target_label = "RPL21",xlim.max = 1000, ylim.max = 1000)
 ```
 
-## Citation
-If you think this software interesting and use it in your research, you are welcome to use the text and paper below to cite our program:
 
-> Splicing efficiency analysis in this research was conducted with an R package Splicing Efficiency Analysis and Annotation (SEAA) (https://github.com/PrinceWang2018/SEAA) [1].
->
-> [1] Qin, J., Huang, T., Wang, Z. *et al.* Bud31-mediated alternative splicing is required for spermatogonial stem cell self-renewal and differentiation. *Cell Death Differ* (2022). https://doi.org/10.1038/s41418-022-01057-1
-
-
-
-## Contact
-If you have any question, please contact Zixiang Wang at wangzixiang@sdu.edu.cn or wangzixiang@live.com.
