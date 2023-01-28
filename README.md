@@ -5,8 +5,7 @@
 [![DOI](https://zenodo.org/badge/384065256.svg)](https://zenodo.org/badge/latestdoi/384065256)
 <!-- badges: end -->
 
-![Figure1](https://user-images.githubusercontent.com/37299182/215255012-36c26713-1c53-4f9c-b4d0-f36fd21b9a35.png)
-
+![Workflow](https://user-images.githubusercontent.com/37299182/215255965-b45a67c0-58ff-4dcd-acb5-c7759c159b1c.png)
 
 SEAA provides convenient and rapid splicing efficiency calculation and splicing 
 sites annotation function using next generation sequencing data. Aligned .bam 
