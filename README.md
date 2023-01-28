@@ -46,7 +46,7 @@ It should be noticed that Ensembl version reference files with chromosome number
 ``` r
 hisat2 -x /indexpath/hisat2/grch37_tran/genome_tran -1 /fastqpath/NC_1.fastq -2 /fastqpath/NC_2.fastq --min-intronlen 20 --max-intronlen 10000 --threads 12 --rna-strandness F | samtools sort -o /outputpath/NC.bam - 
 ```
-We have already prepared the saf files consisting the splicing sites of human (hg19)
+We have already prepared the saf files consisting the splicing sites of human (hg19, hg38)
 and mouse (mm10) which can be downloaded from our GitHub repository https://github.com/PrinceWang2018/SEAA_reference.
 
 ## Example
@@ -88,6 +88,7 @@ efficiency_5ss_3ss_nona_inf_reduct<-SEfilter(SEresultlist,min_counts = 5)
 ``` r
 CDFplot(SEresultlist,efficiency_5ss_3ss_nona_inf_reduct,zoom.x= c(5,6))
 ```
+You can edit the .pdf file with Acrobat.
 **Step 5 Annotation of Splicing Sites Acquiring filtered Splicing Efficiency.**
 
 ``` r
@@ -99,4 +100,8 @@ SEannotaionresult<-SEsiteanno(SEresultlist, efficiency_5ss_3ss_nona_inf_reduct, 
 targetlabeling(SEresultlist,target_site = "27830321",target_label = "RPL21",xlim.max = 1000, ylim.max = 1000)
 ```
 
+## Papers using the R package
+> 1.	Qin J, Huang T, Wang Z, Zhang X, Wang J, Dang Q, et al. Bud31-mediated alternative splicing is required for spermatogonial stem cell self-renewal and differentiation. Cell Death Differ. 2022.
+> 2.	Wang S, Wang Z, Li J, Qin J, Song J, Li Y, et al. Splicing factor USP39 promotes ovarian cancer malignancy through maintaining efficient splicing of oncogenic HMGA2. Cell Death & Disease. 2021;12(4):294.
+> 3.	Wang X, Han M, Wang S, Sun Y, Zhao W, Xue Z, et al. Targeting the splicing factor NONO inhibits GBM progression through GPX1 intron retention. Theranostics. 2022;12(12):5451-69.
 
