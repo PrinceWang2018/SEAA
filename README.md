@@ -2,6 +2,7 @@
 # SEAA (Splicing Efficiency Analysis and Annotation)
 
 <!-- badges: start -->
+[![DOI](https://zenodo.org/badge/384065256.svg)](https://zenodo.org/badge/latestdoi/384065256)
 <!-- badges: end -->
 
 SEAA provides convenient and rapid splicing efficiency calculation and splicing 
