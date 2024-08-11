@@ -39,8 +39,8 @@ install_github("PrinceWang2018/SEAA")
 
 Aligning your sequencing files with hisat2 is strongly recommended. Genome_trans
 index of hisat2 can be downloaded from http://daehwankimlab.github.io/hisat2/download/.
-It should be noticed that Ensembl version reference files with chromosome number 
-"1" instead of "chr1" were used. Or you will need to edit the saf file manually.
+Other softwares such as STAR, bowtie2 are also supported. It should be noticed that 
+Ensembl version reference files with chromosome number "1" instead of "chr1" were used. 
 
 ``` r
 hisat2 -x /indexpath/hisat2/grch37_tran/genome_tran -1 /fastqpath/NC_1.fastq -2 /fastqpath/NC_2.fastq --min-intronlen 20 --max-intronlen 10000 --threads 12 --rna-strandness F | samtools sort -o /outputpath/NC.bam - 
@@ -70,8 +70,14 @@ If you come across the following warning, that means the successfully matched sp
 
 > Warning: Few reads are mapped to the splice sites. Please try another strand-specific parameter.
 
-Please change the "strand = " parameter among 0,1,2 until you acquire a desirable splicing status ratio.
+If the library strand is unknown, try the "strand =" parameter between 0, 1, and 2 until the percentage of successful pairs exceeds 10%.
+If the alignment file is too large, the reads for a particular chromosome can be extracted first to assess whether the results are satisfactory.
 
+``` shell
+samtools view  -hb -@ 8  Sample_STAR_hg38Aligned.sortedByCoord.out.bam  13 > NC_1_chr13.bam
+# Or
+samtools view  -hb -@ 8  Sample_ht2_hg38.bam  chr13 > NC_1_chr13.bam
+```
 **Step 2 Splicing efficiency status classification and visualization.**
 
 ``` r
