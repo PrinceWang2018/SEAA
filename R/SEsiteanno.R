@@ -18,14 +18,16 @@ SEsiteanno<-function(SEresultlist, efficiency_5ss_3ss_nona_inf_reduct, species =
   efficiency_5ss_con_anno_genes4<-tidyr::unite(efficiency_5ss_con_anno_genes2,"Intron_num",c("INTRON","INTRON_Num"),sep = "",remove = TRUE)
   efficiency_5ss_con_anno_genes4<-efficiency_5ss_con_anno_genes4[,-4:-7]
   gene <- as.character(efficiency_5ss_con_anno_genes4$NM_id)
-  gene2<-gsub("..$","",gene)
-  efficiency_5ss_con_anno_genes4$NM_id2<-gene2
+
   if (species=="hs") {
+      gene2<-gsub("..$","",gene)
+      efficiency_5ss_con_anno_genes4$NM_id2<-gene2
     gene.df <- clusterProfiler::bitr(gene2, fromType = "REFSEQ",
                                      toType = c("SYMBOL","ENSEMBL"),    #switching REFSEQ into SYMBOL and ENSEMBL
                                      OrgDb = org.Hs.eg.db::org.Hs.eg.db)
   } else if (species=="mm" ) {
-    gene.df <- clusterProfiler::bitr(gene2, fromType = "REFSEQ",
+      efficiency_5ss_con_anno_genes4$NM_id2<-gene
+    gene.df <- clusterProfiler::bitr(gene, fromType = "REFSEQ",
                                      toType = c("SYMBOL","ENSEMBL"),    #switching REFSEQ into SYMBOL and ENSEMBL
                                      OrgDb = org.Mm.eg.db::org.Mm.eg.db)
   } else {
