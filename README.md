@@ -56,6 +56,7 @@ This is a basic workflow which shows you how to use this software:
 library("SEAA")
 #set you work path
 setwd("/home/username/workpath/")
+#Note: All files and figures will be exported into this folder.
 ```
 **Step 1 Calculating splicing efficiency.**
 
